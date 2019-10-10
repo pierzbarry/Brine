@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-0.5">
+        </div>
+        <div class="col-sm">
+            <nav th:replace="base :: navbar"></nav>
+        </div>
+    </div>
+</div>
+
+<div th:each="message : ${messages}">
+    <div class="container">
+        <div class="row">
+            <div class="col-0.5">
+            </div>
+            <div class="col-sm">
+                <br /><br/>
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-text">[[${message.content}]]</p>
+            <td>
+                <div th:each="message : ${messages}">
+                    <div th:if="${message.imageurl}">
+                        <img th:src="${message.imageurl}" class="img-thumbnail">
+                    </div>
+                </div>
+            </td>
+            <td>
+                <h6>From: [[${message.sentby}]] on [[${message.date}]]</h6>
+
+                <button type="button" class="btn btn-outline-danger btn-sm"><a th:href="@{/update/{id}(id=${message.id})}">Update</a></button>
+                <button type="button" class="btn btn-outline-danger btn-sm"><a th:href="@{/detail/{id}(id=${message.id})}">Detail</a></button>
+                <button type="button" class="btn btn-outline-danger btn-sm"><a th:href="@{/delete/{id}(id=${message.id})}">Delete</a></button>
+            </td>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+            <br /><br />
+
+</body>
+</html>

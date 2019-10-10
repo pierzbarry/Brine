@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-0.5">
+        </div>
+        <div class="col-sm">
+            <nav th:replace="base :: navbar"></nav>
+        </div>
+    </div>
+</div>
+
+<form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
+    <div class="container">
+        <div class="row">
+            <div class="col-0.5">
+            </div>
+            <div class="col-sm">
+                <br /><br/>
+                <label >Name: </label><br/>
+                <input type="text" th:field="*{sentby}"><br/><br/>
+
+                <label >Date: </label><br/>
+                <input type="text" th:field="*{date}"><br/><br/>
+
+                <label >Message: </label><br/>
+                <textarea rows="5" th:field="*{content}" /><br/><br/>
+
+                <label >Image Upload:</label><br/>
+                <input type="file" name="file" /><br/><br/>
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
