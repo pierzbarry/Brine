@@ -26,6 +26,18 @@ public class HomeController {
         return "list";
     }
 
+    @RequestMapping("/spook")
+    public String spook(Model model) {
+        model.addAttribute("messages", messageRepository.findAll());
+        return "spook";
+    }
+
+    @RequestMapping("/me")
+    public String me(Model model) {
+        model.addAttribute("messages", messageRepository.findAll());
+        return "me";
+    }
+
     @GetMapping("/add")
     public String messageForm(Model model) {
         model.addAttribute("message", new Message());
@@ -65,5 +77,4 @@ public class HomeController {
         messageRepository.deleteById(id);
         return "redirect:/";
     }
-
 }

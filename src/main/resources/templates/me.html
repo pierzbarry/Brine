@@ -21,38 +21,31 @@
     </div>
 </div>
 
-<form action="#" th:action="@{/process}" th:object="${message}" method="post" enctype="multipart/form-data">
-    <input type="hidden" th:field="*{id}" />
-    <div class="container">
-        <div class="row">
-            <div class="col-0.5">
-            </div>
-            <div class="col-sm">
-                <br /><br/>
 
-            <div class="jumbotron">
-                <div class="container">
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
 
-                    <label >Name: </label><br/>
-                <input type="text" th:field="*{sentby}"><br/><br/>
-
-                <label >Date: </label><br/>
-                <input type="text" th:field="*{date}"><br/><br/>
-
-                <label >Message: </label><br/>
-                <textarea rows="5" th:field="*{content}" /><br/><br/>
-
-                <label >Image Upload:</label><br/>
-                <input type="file" name="file" /><br/><br/>
-
-                </div>
-            </div>
-
-                <button type="submit" class="btn btn-dark">Submit</button>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img src="https://res.cloudinary.com/dn5drwg3e/image/upload/v1570724164/nyupz5mgxgb4jsfe7ewr.png" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Pierz</h5>
+                <p class="card-text">I'm just a poor boy nobody loves me except for the virgin mother mary.</p>
+                <p class="card-text"><small class="text-muted"></small></p>
             </div>
         </div>
     </div>
-</form>
+</div>
+
+
+        </div>
+    </div>
+</div>
+
 
 <div class="container">
     <div class="row justify-content-md-center">

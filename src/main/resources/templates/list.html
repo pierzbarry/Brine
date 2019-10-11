@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+
+<body style="background: url(https://res.cloudinary.com/dn5drwg3e/image/upload/v1570818927/simple-bat-pattern-halloween-background_8306-23_ightb2.jpg); -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;">
+
+
 <div class="container">
     <div class="row">
         <div class="col-0.5">
@@ -16,6 +22,12 @@
     </div>
 </div>
 
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <div class="jumbotron">
+
 <div th:each="message : ${messages}">
     <div class="container">
         <div class="row">
@@ -24,32 +36,42 @@
             <div class="col-sm">
                 <br /><br/>
 
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <p class="card-text">[[${message.content}]]</p>
-            <td>
-                <div th:each="message : ${messages}">
-                    <div th:if="${message.imageurl}">
-                        <img th:src="${message.imageurl}" class="img-thumbnail">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+        <div class="card-header"><h6>From: [[${message.sentby}]] on [[${message.date}]]</h6></div>
+            <div class="card-body">
+                <p class="card-text">[[${message.content}]]</p>
+                <td>
+                    <div>
+                        <div th:if="${message.imageurl} != null">
+                            <img th:src="${message.imageurl}" class="img-thumbnail">
+                        </div>
                     </div>
-                </div>
-            </td>
-            <td>
-                <h6>From: [[${message.sentby}]] on [[${message.date}]]</h6>
-
-                <button type="button" class="btn btn-outline-danger btn-sm"><a th:href="@{/update/{id}(id=${message.id})}">Update</a></button>
-                <button type="button" class="btn btn-outline-danger btn-sm"><a th:href="@{/detail/{id}(id=${message.id})}">Detail</a></button>
-                <button type="button" class="btn btn-outline-danger btn-sm"><a th:href="@{/delete/{id}(id=${message.id})}">Delete</a></button>
-            </td>
+                </td>
+            </div>
+        </div>
+                        <a class="btn btn-danger btn-sm" th:href="@{/delete/{id}(id=${message.id})}"
+                           role="button">Delete</a>
+            </div>
         </div>
     </div>
+</div>
+
 </div>
 
         </div>
     </div>
 </div>
 
-            <br /><br />
+<br />
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <nav th:replace="base :: footer"></nav>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
+

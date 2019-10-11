@@ -19,7 +19,15 @@ public class Message {
     private String sentby;
     public String imageurl;
 
+    public Message(String content, String date, String sentby, String imageurl) {
+        this.content = content;
+        this.date = date;
+        this.sentby = sentby;
+        this.imageurl = imageurl;
+    }
 
+    public Message() {
+    }
 
     public long getId() {
         return id;
