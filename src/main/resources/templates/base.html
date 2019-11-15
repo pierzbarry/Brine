@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, inital-scale=1" />
-    <title>I wish this was twitter</title>
+    <title>Brine</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         body { padding-bottom: 70px;}
@@ -13,14 +13,8 @@
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" th:fragment="navbar">
-    <a class="navbar-brand" href="/">
-        <img src="https://res.cloudinary.com/dn5drwg3e/image/upload/c_scale,e_sharpen:100,q_100,w_50/v1570813879/bat-216-544907_utj2fk.png" width="50" height="50" alt="">
-            Spook</a>
-
-    <button class="navbar-toggler" type="button" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" th:fragment="navbar">
+    <a class="navbar-brand" href="/"><img src="https://i.imgur.com/xExPiua.png" width="60" height="50" alt=""> Brine</a>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -33,6 +27,10 @@
                 <a class="nav-link" href="/me">About Me</a>
             </li>
         </ul>
+        <form class="form-inline justify-content-right my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
 </nav>
 
